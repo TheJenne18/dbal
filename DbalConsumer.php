@@ -32,7 +32,7 @@ class DbalConsumer implements Consumer
     private $queue;
 
     /**
-     * Default 20 minutes in milliseconds.
+     * Default 0.1 minutes in milliseconds.
      *
      * @var int
      */
@@ -44,7 +44,7 @@ class DbalConsumer implements Consumer
         $this->queue = $queue;
         $this->dbal = $this->context->getDbalConnection();
 
-        $this->redeliveryDelay = 1200000;
+        $this->redeliveryDelay = 6000;
     }
 
     /**

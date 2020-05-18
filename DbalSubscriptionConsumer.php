@@ -30,7 +30,7 @@ class DbalSubscriptionConsumer implements SubscriptionConsumer
     private $dbal;
 
     /**
-     * Default 20 minutes in milliseconds.
+     * Default 0.1 minutes in milliseconds.
      *
      * @var int
      */
@@ -45,7 +45,7 @@ class DbalSubscriptionConsumer implements SubscriptionConsumer
         $this->dbal = $this->context->getDbalConnection();
         $this->subscribers = [];
 
-        $this->redeliveryDelay = 1200000;
+        $this->redeliveryDelay = 6000;
     }
 
     /**
